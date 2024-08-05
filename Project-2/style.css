@@ -1,0 +1,84 @@
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Oswald", sans-serif;
+      }
+      .container {
+        width: 90vw;
+        min-height: 94vh;
+        background-color: rgb(185 223 195 / 93%);
+        margin: 10px auto;
+        height: auto;
+      }
+
+      .top {
+        margin: 10px auto;
+        text-align: center;
+        padding: 17px 10px;
+      }
+      .inputs {
+        text-align: center;
+        padding: 17px 10px;
+      }
+      .oneInput {
+        margin: 15px 5px;
+      }
+
+      #heightLabel,
+      #weightLabel {
+        border-radius: 10px;
+        width: 176px;
+        height: 30px;
+        outline: white;
+        border: 1px solid black;
+        padding: 4px 8px;
+      }
+      .Calculations {
+        text-align: center;
+        padding: 17px 10px;
+      }
+      .Calculations button {
+        width: 160px;
+        height: 36px;
+        font-size: 17px;
+        background-color: white;
+        border-radius: 10px;
+        border: 1px solid black;
+      }
+      .Calculations button:hover {
+        background-color: rgb(1 8 8 / 39%);
+        color: white;
+      }
+      label {
+        margin-right: 13px;
+      }
+      .categories{
+       text-align: center;
+       padding: 17px 10px; 
+      }
+      .answers{
+        text-align: center;
+        padding: 17px 10px;  
+
+        display: flex;
+    text-align: center;
+    padding: 12px 10px;
+    justify-content: center;
+    align-items: center;
+
+      }
+
+      .answers textarea
+      {
+        width: 160px;
+        height: 30px;
+        background-color: white;
+        border-radius: 10px;
+        border: 1px solid black; 
+        padding: 4px 8px;
+      }
+      .bmiLabel{
+
+      }

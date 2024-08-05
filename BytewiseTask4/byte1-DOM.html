@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            This is a box
+        </div>
+    </div>
+    <script>
+        
+        document.title = "Muzdalfa's JS"
+        console.log(document.title);
+
+        // This will print the entire html body in tree like structure
+        console.log(document.body);
+        (document.body.style.backgroundColor = "Yellow")
+        console.log(window)
+        console.log(window.document)
+        console.log(window.document.body)
+
+        
+        // While inspecting in browser when we click on a particular element that element will have $0 written with it.
+        // Now on the console window when we will write the &0 and then next to it write any new property of css it will
+        // be applied to that element
+    </script>
+</body>
+</html>

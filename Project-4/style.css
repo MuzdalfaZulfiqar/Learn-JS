@@ -1,0 +1,25 @@
+
+#wrapper{
+    padding-top: 20px;
+    background-color: rgb(236, 186, 186);
+    height: 90vh;
+    width: 30vw;
+    margin: 0px auto;
+    text-align: center;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+input{
+    height: 35px;
+    width: 20vw;
+}
+#subt{
+    height: 30px;
+    background-color: black;
+    color: white;
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+        }
+        .bg-black{
+            background-color: black;
+        }
+        .bg-white{
+            background-color: white;
+        }
+        .bg-blue{
+            background-color: blue;
+        }
+        .bg-green{
+            background-color: green;
+        }
+        .container{
+            margin: 0 363px;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button class="box bg-black"></button>
+        <button class="box bg-white"></button>
+        <button class="box bg-blue"></button>
+        <button class="box bg-green"></button>
+    </div>
+    <script>
+        let btnBlack = document.getElementsByClassName("bg-black")[0];
+        console.log(btnBlack)
+        btnBlack.addEventListener("click", function(){
+            document.body.style.backgroundColor = "black"
+        })
+        let btnWhite = document.getElementsByClassName("bg-white")[0];
+        console.log(btnWhite)
+        btnWhite.addEventListener("click", function(){
+            document.body.style.backgroundColor = "white"
+        })
+        let btnBlue = document.getElementsByClassName("bg-blue")[0];
+        console.log(btnBlue)
+        btnBlue.addEventListener("click", function(){
+            document.body.style.backgroundColor = "blue"
+        })
+        let btngreen = document.getElementsByClassName("bg-green")[0];
+        console.log(btngreen)
+        btngreen.addEventListener("click", function(){
+            document.body.style.backgroundColor = "green"
+        })
+    </script>
+</body>
+</html>
