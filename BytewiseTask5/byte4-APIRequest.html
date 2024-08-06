@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 100vw;
+            height: 100vh;
+            background-color: antiquewhite;
+            
+            margin: 0px auto;
+        }
+        .card{
+            width: 300px;
+            height: 400px;
+            background-color: black;
+            margin: 0px auto;
+        }
+        .top{
+            width: 300px;
+            height: 250px;
+        }
+        .bottom{
+            width: 300px;
+            height: 150px;
+            background-color: aqua;
+        }
+        .top img{
+            object-fit: cover;
+            object-position: center;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="cotainer">
+        <div class="card">
+            <div class="top">
+                <img src="" alt="">
+            </div>
+            <div class="bottom"></div>
+        </div>
+    </div>
+    
+</body>
+<script>
+
+    /*
+    Value	State	Description
+0	UNSENT	Client has been created. open() not called yet.
+1	OPENED	open() has been called.
+2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+3	LOADING	Downloading; responseText holds partial data.
+4	DONE	The operation is complete.
+    */
+    const requestURL = "https://api.github.com/users/MuzdalfaZulfiqar";
+    const xhr = new XMLHttpRequest();
+    console.log("Before Open");
+    xhr.open("GET", requestURL);  // this open() will not call itself so to call it we need to send()
+    xhr.onreadystatechange = function(){
+// This onreadyStateChange() willallow us to track all the five stages of xml requesr
+        console.log("readyState = "+ xhr.readyState);
+        if(xhr.readyState == 4){
+            console.log(this.responseText)  // response is usualyy in string 
+            let obj = JSON.parse(this.responseText);  // so parsing it to JSON(object)
+            console.log(obj.followers) // but this is undefined if we do not parse it 
+            console.log(obj.avatar_url) 
+
+
+            document.querySelector("img").src = obj.avatar_url
+            document.querySelector(".bottom").innerHTML = obj.followers;
+        }
+    }
+    console.log("Before send")
+    xhr.send()
+
+</script>
+</html>

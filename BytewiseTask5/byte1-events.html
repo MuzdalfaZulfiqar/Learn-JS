@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li> 
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: rgb(7, 7, 8);" href="https://google.com" id="google">Google</a></li>
+        </ul>
+        <div class="parent">
+            I am parent
+            <div class="child">I am child</div>
+        </div>
+        <div class="aTag">
+            <a href="https://developer.mozilla.org/en-US/docs/Web/API/Event/srcElement">Open Link</a>
+        </div>
+   </div>
+
+   <script>
+    //   document.addEventListener("keydown", function(event){
+        // console.log(event.target)   // will return the element on which the event was performed
+        // console.log(event.currentTarget)  // will return the elemtn with which the element was attached
+        // console.log("Client")
+        // console.log(event.clientX)
+        // values will be takes on the base of the viewport
+        // console.log(event.clientY)
+
+        // page X/Y will take the value of x and y on base of the overall page not only
+        // on the viewport lets say we have scroll bar and we haave scrolled down noe 
+        // page X and Y will consider axis coordinated from the start to scroll point where we are now
+        // console.log("Page")
+        // console.log(event.pageX) 
+        // console.log(event.pageY) 
+        // console.log(event.altKey)
+        // console.log(event.ctrlKey)
+        // console.log(event.shiftKey)
+
+        // for getting the coordinates from the actual screen rather than the browser screen we use screenX and screenY
+    // })
+
+    // document.getElementById("images").addEventListener("click", function(event){
+    //     console.log("Clicked inside the UL")
+    //     event.stopPropagation()
+    // }, false)
+    // document.getElementById("owl").addEventListener("click", function(event){
+    //     console.log("Clicked on owl")
+    //     event.stopPropagation()
+    // }, false)  
+    // it will print  Clicked on owl
+    //                Clicked inside the UL (This is because of the false which is causing the event bubbling low to high)
+    // if true then event capturing means high to low
+
+    document.querySelector("#images").addEventListener
+    ("click", function(event){
+        // console.log(event.target.parentNode) // event.target will give image and its parent is li
+        // let l = event.target.parentNode;
+        // l.remove(); at one point if we click google it will remove the whole ul becuase the li ka parent ha ul
+        // l.parentNode.removeChild(l); // hum ne kaha l ha hamar li to uss ka parent do hamain jo k ha ul aur uss ul
+        // ke ande se uss li ko dlt kr do
+
+        // and we want to prevent the whole ul deletion we can  apply checks as
+        if(event.target.tagName === "IMG"){
+            let l = event.target.parentNode;
+        l.parentNode.removeChild(l);
+        }
+    })
+
+   </script>
+</body>
+<!-- <script>
+
+    // let photo = document.getElementsByClassName("parent");
+    // console.log(photo)
+    // photo[0].addEventListener("click", function(event){
+    //     console.log(event.target)   // will return the element on which the event was performed
+    //     console.log(event.currentTarget)  // will return the elemtn with which the element was attached
+    //     console.log(event.clientX)
+        
+    // })
+
+    document.addEventListener("mousemove", function(event){
+        // console.log(event.target)   // will return the element on which the event was performed
+        // console.log(event.currentTarget)  // will return the elemtn with which the element was attached
+        console.log(event.clientX)
+        
+    })
+    // let aTag = document.getElementsByClassName("aTag");
+    // aTag[0].addEventListener("click", function(event){
+    //     // console.log(event.preventDefault)
+    //     event.preventDefault();  // now this a tag will not direct us to anything
+        
+    // })
+
+    /*
+    This 
+    */
+    // This is not a good approach 
+    // document.getElementById("owl").onclick = function(){
+    //     alert("Owl clicked")
+    // }
+
+    // document.getElementById("owl").addEventListener("click", function(event){
+    //     // alert("Ownl Clicked again")
+    //     console.log(event)
+    // }, false)
+
+    // document.getElementById("owl").addEventListener("mouseover", function(event){
+    //     console.log(event.relatedTarget
+    //     )
+    // }, false)
+
+    // let owl = document.getElementById("owl");
+    // owl.addEventListener("click", function(){
+    //     let circle = document.createElement("div");
+    //     circle.setAttribute("class","cir");
+    //     circle.style.width = "120px";
+    //     circle.style.height = "120px";
+    //     circle.style.borderRadius = "50%";
+    //     circle.style.backgroundColor = "yellow";
+    //     owl.after(circle);
+    //     console.log(owl.childNodes);
+    //     // let o = document.querySelector("li:nth-child(4)");
+    //     // console.log(o)
+    //     owl.style.position = "absolute";
+    //     circle.style.position = "absolute";
+    //     circle.style.visibility = "visible"
+    // }, false)
+    // attachEvent()
+
+
+
+document.querySelector('div').addEventListener('mouseover', function(event) {
+    console.log('relatedTarget:', event.relatedTarget);
+    console.log('toElement:', event.toElement);
+    console.log('fromElement:', event.fromElement);
+});
+
+</script> -->
+</html>

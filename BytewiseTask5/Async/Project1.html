@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      h1 {
+        text-align: center;
+        margin: 0px auto;
+      }
+      #start {
+        text-align: center;
+        margin: 32px 42%;
+        margin-top: 50px;
+        height: 30px;
+        width: 200px;
+        background: black;
+        color: white;
+        font-size: medium;
+        border-radius: 11px;
+      }
+      #start:hover {
+        background-color: white;
+        color: black;
+        border: 1px solid black;
+      }
+      #stop:hover {
+        background-color: white;
+        color: black;
+        border: 1px solid black;
+      }
+      #stop {
+        text-align: center;
+        margin: 32px 42%;
+        height: 30px;
+        width: 200px;
+        background: black;
+        color: white;
+        font-size: medium;
+        border-radius: 11px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Color Generator</h1>
+    <button id="start">Start Generator</button>
+    <button id="stop">Stop Generator</button>
+  </body>
+  <script>
+    function random() {
+      let hex = "0123456789ABCDEFG";
+      let color = "#";
+      for (let i = 0; i < 6; i++) {
+        color += hex[Math.floor(Math.random() * 16)];
+      }
+
+      return color;
+    }
+    // let c = random();
+    // console.log(c);
+
+    let stopValue = 0;
+
+    document.querySelector("#start").addEventListener("click", () => {
+      stopValue =  setInterval(() => {
+        let c = random();
+        document.body.style.backgroundColor = c;
+        console.log(c)
+      }, 1000);
+    });
+
+    document.querySelector("#stop").addEventListener("click", () => {
+            clearInterval(stopValue)
+    });
+
+
+  </script>
+</html>

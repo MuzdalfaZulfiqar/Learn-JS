@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>name</h1>
+    <button id="start">start</button>
+    <button id="stop">stop</button>
+</body>
+<script>
+    let changeName = function(){
+        document.querySelector("h1").innerHTML = "Muzdalfa"
+    }
+
+    // even stors in a variable it will be still called
+    // let valOfTime = setTimeout(changeName, 2000);
+
+    // if we want to pass an argument in our callback function we can do this
+    let sayDate = function(str){
+        console.log(str + " Hi how are you?")
+    }
+
+    //  this is something sayDate(muzdalfa)
+    let valOfTime; 
+    
+
+
+    document.querySelector("#start").addEventListener("click", ()=>{
+        valOfTime =  setInterval(sayDate, 1000, "Muzdalfa");
+    })
+
+    document.querySelector("#stop").addEventListener("click", ()=>{
+        // clearTimeout(valOfTime)
+        clearInterval(valOfTime)  // now says that stop this timeout if we click on stop button before 2s then no
+        // change will occur by changeName function
+    })
+</script>
+</html>
